@@ -1,0 +1,46 @@
+@use "../helpers" as helpers;
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 32px 0;
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		width: 133px;
+
+		@include helpers.breakpoint(md) {
+			width: 182px;
+		}
+	}
+
+	&__nav {
+		display: none;
+
+		@include helpers.breakpoint(md) {
+			display: block;
+		}
+
+		&__list {
+			display: flex;
+			gap: 30px;
+		}
+
+		.link {
+			color: helpers.$white;
+		}
+	}
+
+	&__link {
+		a {
+			color: helpers.$white;
+		}
+	}
+}

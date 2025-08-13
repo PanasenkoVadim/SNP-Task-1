@@ -39,6 +39,10 @@
 	}
 }
 
+body {
+	background-color: helpers.$beige100;
+}
+
 body,
 .p-normal {
 	font-family: "Roboto";
@@ -56,7 +60,6 @@ body,
 	font-weight: 700;
 
 	@include helpers.breakpoint(md) {
-		font-weight: 700;
 		font-size: 23px;
 		line-height: 122%;
 	}
@@ -72,7 +75,6 @@ body,
 
 .container {
 	padding: 0 21px;
-	background-color: red;
 	margin: 0 auto;
 
 	@include helpers.breakpoint(md) {
@@ -82,5 +84,50 @@ body,
 	@include helpers.breakpoint(lg) {
 		max-width: 1170px;
 		padding: 0;
+	}
+}
+
+.heading {
+	margin-bottom: 50px;
+	text-align: center;
+
+	@include helpers.breakpoint(md) {
+		margin-bottom: 100px;
+	}
+
+	.h2 {
+		margin-bottom: 20px;
+
+		@include helpers.breakpoint(md) {
+			margin-bottom: 30px;
+		}
+	}
+
+	p {
+		color: helpers.$gray300;
+	}
+}
+
+.link {
+	position: relative;
+	color: inherit;
+	background: linear-gradient(transparent calc(100% - 1px), currentColor 2px);
+	background-position: 100%;
+	background-size: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size .3s;
+	cursor: pointer;
+
+	&:hover {
+		background-position: 0;
+		background-size: 100% 100%;
+	}
+}
+
+section {
+	margin-bottom: 75px;
+
+	@include helpers.breakpoint(md) {
+		margin-bottom: 135px;
 	}
 }
