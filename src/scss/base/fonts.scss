@@ -1,0 +1,25 @@
+$fontsPath: "../../static/fonts";
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: url("#{$fontsPath}/Roboto/Roboto-Regular.woff") format("woff"),
+	url("#{$fontsPath}/Roboto/Roboto-Regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 500;
+	src: url("#{$fontsPath}/Roboto/Roboto-Medium.woff") format("woff"),
+	url("#{$fontsPath}/Roboto/Roboto-Medium.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 600;
+	src: url("#{$fontsPath}/Roboto/Roboto-Bold.woff") format("woff"),
+	url("#{$fontsPath}/Roboto/Roboto-Bold.woff2") format("woff2");
+}
