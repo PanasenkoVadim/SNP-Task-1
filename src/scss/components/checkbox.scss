@@ -1,0 +1,62 @@
+@use "../helpers" as helpers;
+
+.checkbox {
+	display: flex;
+	gap: 11px;
+
+	input[type="checkbox"] {
+		position: absolute;
+		visibility: hidden;
+		z-index: -1;
+		height: 0;
+		width: 0;
+
+		&:checked+.checkbox__custom::before {
+			transform: scale(1);
+		}
+	}
+
+	&__custom {
+		position: relative;
+		display: block;
+		width: 20px;
+		height: 20px;
+		border: 1px solid helpers.$black;
+		border-radius: 4px;
+		cursor: pointer;
+
+		@include helpers.breakpoint(md) {
+			width: 26px;
+			height: 26px;
+		}
+
+		&::before {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			left: 3px;
+			top: 4px;
+			background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.293044 4.53581C0.683569 4.14529 1.31673 4.14529 1.70726 4.53581L4.62161 7.45017L11.1574 0.914353C11.5479 0.523829 12.1811 0.523829 12.5716 0.914353C12.9622 1.30488 12.9622 1.93804 12.5716 2.32857L5.32872 9.57149C4.93819 9.96201 4.30503 9.96201 3.9145 9.57149L0.293044 5.95003C-0.09748 5.5595 -0.09748 4.92634 0.293044 4.53581Z' fill='%231B1F2B'/%3E%3C/svg%3E%0A");
+			background-repeat: no-repeat;
+			width: 12px;
+			height: 9px;
+			transform: scale(0);
+			transition: transform .1s;
+
+			@include helpers.breakpoint(md) {
+				left: 6px;
+				top: 6px;
+				width: 18px;
+				height: 14px;
+			}
+		}
+	}
+
+	&__text {
+		color: helpers.$gray300;
+
+		a {
+			color: helpers.$black;
+		}
+	}
+}

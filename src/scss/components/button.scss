@@ -21,11 +21,32 @@
 
 	&--primary {
 		background-color: helpers.$green400;
+		color: helpers.$white;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: helpers.$green300;
+			}
+		}
+
+		&:active {
+			background-color: helpers.$green200;
+		}
 	}
 
 	&--secondary {
-		font-size: 20px;
 		background-color: helpers.$green100;
+		color: helpers.$green300;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: helpers.$gray100;
+			}
+		}
+
+		&:active {
+			background-color: helpers.$gray200;
+		}
 	}
 
 	&--accent {

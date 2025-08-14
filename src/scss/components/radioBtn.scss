@@ -1,0 +1,63 @@
+@use "../helpers" as helpers;
+
+.radio {
+	&Group {
+		display: flex;
+		gap: 30px;
+	}
+
+	&Btn {
+		input[type="radio"] {
+			position: absolute;
+			visibility: hidden;
+			z-index: -1;
+			height: 0;
+			width: 0;
+
+			&:checked+.radioBtn__custom::before {
+				height: 10px;
+				width: 10px;
+
+				@include helpers.breakpoint(md) {
+					width: 12px;
+					height: 12px;
+				}
+			}
+		}
+
+		label {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			cursor: pointer;
+		}
+
+		&__custom {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border: 1px solid helpers.$black;
+			border-radius: 50%;
+			position: relative;
+
+			@include helpers.breakpoint(md) {
+				width: 26px;
+				height: 26px;
+			}
+
+			&::before {
+				content: "";
+				background-color: helpers.$black;
+				border-radius: 50%;
+				display: block;
+				height: 0;
+				width: 0;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				transition: all .1s ease;
+			}
+		}
+	}
+}

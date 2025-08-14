@@ -1,4 +1,6 @@
-export function initTabs({ defaultIndex = 0 }) {
+import { debounce } from "./utils/debounce"
+
+export function initTabs({ defaultIndex = 0, activeClass = "active", resizeDelay = 200 } = {}) {
 	const wrapper = document.querySelector(".js-tabs")
 
 	if (!wrapper) return
@@ -17,19 +19,18 @@ export function initTabs({ defaultIndex = 0 }) {
 		})
 	})
 
-	window.addEventListener("resize", () => {
-		fixContentHeight(items.findIndex(item => item.classList.contains("active")))
-	})
+	const resizeHandler = debounce(() => fixContentHeight(items.findIndex(item => item.classList.contains(activeClass))), resizeDelay)
+	window.addEventListener("resize", resizeHandler)
 
 	function hideAll() {
-		buttons.forEach(item => item.classList.remove("active"))
-		items.forEach(item => item.classList.remove("active"))
+		buttons.forEach(item => item.classList.remove(activeClass))
+		items.forEach(item => item.classList.remove(activeClass))
 	}
 
 	function show(index) {
 		if (!items[index] || !buttons[index]) return
-		items[index].classList.add("active")
-		buttons[index].classList.add("active")
+		items[index].classList.add(activeClass)
+		buttons[index].classList.add(activeClass)
 		fixContentHeight(index)
 	}
 

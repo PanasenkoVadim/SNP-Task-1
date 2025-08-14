@@ -1,0 +1,77 @@
+@use "../helpers" as helpers;
+
+.form {
+	background-color: helpers.$white;
+	padding: 20px 20px 30px;
+	border-radius: 30px;
+	display: grid;
+	gap: 30px;
+
+	@include helpers.breakpoint(md) {
+		padding: 60px;
+		gap: 33px;
+	}
+
+	&__grid {
+		@include helpers.breakpoint(md) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 33px 20px;
+		}
+
+		@include helpers.breakpoint(lg) {
+			column-gap: 30px;
+		}
+	}
+
+	&__field {
+		display: grid;
+		gap: 8px;
+		position: relative;
+
+		input,
+		textarea {
+			background-color: helpers.$beige100;
+			border: 1px solid helpers.$beige200;
+			border-radius: 10px;
+			padding: 10px;
+
+			&::placeholder {
+				color: helpers.$gray300;
+			}
+
+			&.invalid {
+				border-color: helpers.$red;
+			}
+		}
+
+		textarea {
+			resize: none;
+			min-height: 132px;
+		}
+	}
+
+	&__buttons {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+		max-width: 500px;
+
+		.btn {
+			width: 100%;
+		}
+
+		@include helpers.breakpoint(md) {
+			gap: 30px;
+		}
+	}
+
+
+	&__error {
+		position: absolute;
+		bottom: -26px;
+		left: 0;
+		font-size: 16px;
+		color: helpers.$red;
+	}
+}
