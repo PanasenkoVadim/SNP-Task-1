@@ -25,7 +25,8 @@
 			img {
 				transform: scale(1.2);
 			}
-			.btn--detail{
+
+			.btn--detail {
 				background-color: helpers.$green400;
 			}
 		}
@@ -54,5 +55,46 @@
 
 	@include helpers.breakpoint(md) {
 		padding: 60px;
+	}
+}
+
+.card-review {
+	background-color: helpers.$beige200;
+	border-radius: 20px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+
+	@include helpers.breakpoint(md) {
+		padding: 40px;
+		border-radius: 50px;
+	}
+
+	.p-big {
+		margin-bottom: 56px;
+
+		@include helpers.breakpoint(md) {
+			margin-bottom: 70px;
+		}
+	}
+
+	&__bottom {
+		display: grid;
+		grid-template-columns: auto 75px;
+		align-items: end;
+		margin-top: auto;
+
+		.h3 {
+		}
+
+		.p-small {
+			grid-row: 2;
+			color: helpers.$gray300;
+		}
+
+		img {
+			grid-column: 2;
+			grid-row: span 2;
+		}
 	}
 }

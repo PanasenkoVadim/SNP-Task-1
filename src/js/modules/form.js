@@ -3,9 +3,11 @@ import { validation } from "./utils/validation"
 
 export function initForm() {
 	const form = document.querySelector(".js-form")
+
 	initMasks()
 	setMinDate()
 	validation(form, sendForm)
+	initResetBtn(form)
 }
 
 async function sendForm(form) {
@@ -44,4 +46,19 @@ function setMinDate() {
 	const dateInput = document.querySelector('.js-dateFrom')
 	const today = new Date().toISOString().split('T')[0]
 	dateInput.min = today
+}
+
+function initResetBtn(form) {
+	const resetBtn = form.querySelector(".js-formReset")
+
+	resetBtn.addEventListener("click", () => {
+		const errorRows = Array.from(form.querySelectorAll(".form__error")).filter(e => e.textContent !== "")
+		const invalidFields = form.querySelectorAll(".invalid")
+
+		form.reset()
+
+		if (errorRows.length) errorRows.forEach(error => error.textContent = "")
+
+		if (invalidFields.length) invalidFields.forEach(field => field.classList.remove("invalid"))
+	})
 }

@@ -13,8 +13,9 @@
 	}
 
 	&__grid {
+		display: grid;
+		gap: 30px;
 		@include helpers.breakpoint(md) {
-			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			gap: 33px 20px;
 		}

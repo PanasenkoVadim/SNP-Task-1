@@ -12,7 +12,7 @@
 
 	&--primary,
 	&--secondary {
-		padding: 12px 30px;
+		padding: 12px 29px;
 
 		@include helpers.breakpoint(md) {
 			padding: 15px 70px;

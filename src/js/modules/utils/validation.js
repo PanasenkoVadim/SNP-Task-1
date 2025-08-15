@@ -25,12 +25,13 @@ export function validation(form, callback) {
 		e.preventDefault()
 		const checkbox = form.querySelector(".js-checkbox")
 		const fields = Array.from(form.querySelectorAll("input, textarea")).filter((i) => i.dataset.validation)
-		const radioBtns = form.querySelectorAll(".js-radioGroup[data-validation=required]")
+		const radioGroups = form.querySelectorAll(".js-radioGroup[data-validation=required]")
 
 		fields.forEach(validateField)
 		const isFieldsValid = !fields.some(i => i.classList.contains("invalid"))
-		const isRadioValid = radioBtns.length && validateRadio(radioBtns)
-		const isAllValid = isFieldsValid && isRadioValid
+		const isRadioValid = validateAllRadioGroups(radioGroups)
+		const isCheckboxValid = validateCheckbox(checkbox)
+		const isAllValid = isFieldsValid && isRadioValid && isCheckboxValid
 
 		if (isAllValid) callback(form)
 	})
@@ -45,14 +46,14 @@ function updateError({ errs, field, errorRow }) {
 
 function validateField(field) {
 	const methods = field.dataset.validation.split(" ")
-	const errs = checkErrors(field.value, methods)
+	const errs = getErrors(field.value, methods)
 	const errorRow = field.nextElementSibling
 	updateError({ errs, field, errorRow })
 	field.addEventListener("input", onInput)
 
 	function onInput({ target }) {
 		const val = target.value
-		const errs = checkErrors(val, methods)
+		const errs = getErrors(val, methods)
 		if (!errs.length) {
 			updateError({ errs, field, errorRow })
 			field.removeEventListener("input", onInput)
@@ -60,7 +61,7 @@ function validateField(field) {
 	}
 }
 
-function checkErrors(value, methods) {
+function getErrors(value, methods) {
 	let errs = methods.map(method => {
 		const valid = validationMethods[method].validate(value)
 		return valid ? null : validationMethods[method].msg
@@ -75,4 +76,47 @@ function matchStr(regExp, val) {
 	const match = val.match(regExp)
 	if (match && match[0] === val) return true
 	return false
+}
+
+function validateAllRadioGroups(radioGroups) {
+	let isValid = true
+
+	if (!radioGroups) return isValid
+
+	radioGroups.forEach(group => {
+		const radioInputs = Array.from(group.querySelectorAll("input[type='radio']"))
+		const groupValid = radioInputs.some(r => r.checked)
+		if (!groupValid) {
+			isValid = false
+			const errorRow = group.querySelector(".form__error")
+			if (errorRow) errorRow.textContent = validationMethods.required.msg
+			radioInputs.forEach(r => r.addEventListener("change", onChange))
+
+			function onChange() {
+				errorRow.textContent = ""
+				radioInputs.forEach(r => r.removeEventListener("change", onChange))
+			}
+		}
+	})
+
+	return isValid
+}
+
+function validateCheckbox(container) {
+	const checkbox = container.querySelector("input[type='checkbox']")
+	const errorRow = container.nextElementSibling
+
+	const toggleError = () => {
+		errorRow.textContent = checkbox.checked ? "" : validationMethods.required.msg
+	}
+
+	toggleError()
+
+	if (!checkbox.checked) {
+		checkbox.addEventListener("change", toggleError)
+	} else {
+		checkbox.removeEventListener("change", toggleError)
+	}
+
+	return checkbox.checked
 }

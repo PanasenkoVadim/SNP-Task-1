@@ -1,5 +1,57 @@
 @use "../helpers/index.scss" as helpers;
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+dl,
+dd,
+button,
+input,
+optgroup,
+select,
+textarea {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+textarea,
+select {
+	font: inherit;
+}
+
 .h1 {
 	font-weight: 700;
 	font-size: 34px;
@@ -41,6 +93,10 @@
 
 body {
 	background-color: helpers.$beige100;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body,
@@ -97,6 +153,8 @@ body,
 
 	.h2 {
 		margin-bottom: 20px;
+		max-width: 723px;
+		margin: 0 auto;
 
 		@include helpers.breakpoint(md) {
 			margin-bottom: 30px;
@@ -105,6 +163,8 @@ body,
 
 	p {
 		color: helpers.$gray300;
+		max-width: 418px;
+		margin: 0 auto;
 	}
 }
 

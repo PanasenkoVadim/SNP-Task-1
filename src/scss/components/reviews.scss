@@ -1,0 +1,15 @@
+@use "../helpers" as helpers;
+
+.reviews {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		@include helpers.breakpoint(md){
+			flex-direction: row;
+		}
+		@include helpers.breakpoint(lg){
+			gap: 30px;
+		}
+	}
+}
