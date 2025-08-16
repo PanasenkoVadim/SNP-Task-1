@@ -2,18 +2,13 @@
 
 .hero {
 	color: helpers.$white;
-	height: 100dvh;
+
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), url("../../static/images/hero_background.webp");
 	background-size: cover;
+	background-position: center;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 
-	&::after {
-		content: "";
-	}
-
-	// background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-	// linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%);
+	@include helpers.breakpoint(md) {}
 
 	.container {
 		text-align: center;
@@ -21,9 +16,21 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		flex-shrink: 1;
+		min-height: 488px;
 		gap: 40px;
-		height: 100%;
 		padding-top: 88px;
+
+		@include helpers.breakpoint(md) {
+			min-height: 831px;
+			gap: 50px;
+		}
+	}
+
+	p {
+		max-width: 310px;
+
+		@include helpers.breakpoint(md) {
+			max-width: 400px;
+		}
 	}
 }

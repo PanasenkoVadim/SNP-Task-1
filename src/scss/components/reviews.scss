@@ -2,11 +2,10 @@
 
 .reviews {
 	&__list {
-		display: flex;
-		flex-direction: column;
+		display: grid;
 		gap: 18px;
 		@include helpers.breakpoint(md){
-			flex-direction: row;
+			grid-template-columns: 1fr 1fr;
 		}
 		@include helpers.breakpoint(lg){
 			gap: 30px;

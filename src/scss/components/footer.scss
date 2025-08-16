@@ -1,0 +1,38 @@
+@use "../helpers" as helpers;
+
+.footer {
+	background-color: helpers.$beige200;
+
+	&__inner {
+		padding: 20px 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 7px;
+
+		@include helpers.breakpoint(md) {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 30px 0;
+		}
+	}
+	&__text{
+		color: helpers.$gray300;
+	}
+
+	&__list {
+		display: flex;
+		gap: 15px;
+
+		@include helpers.breakpoint(md) {
+			gap: 25px;
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+		}
+	}
+}

@@ -1,4 +1,5 @@
 import { initForm } from "../modules/form"
+import { initDynamicHeader } from "../modules/dynamicHeader"
 import { initSelect } from "../modules/select"
 import { initTabs } from "../modules/tabs"
 import { ready } from "../modules/utils/ready"

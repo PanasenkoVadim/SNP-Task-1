@@ -30,24 +30,26 @@
 }
 
 @mixin range-breakpoint($min-breakpoint, $max-breakpoint) {
-  @if map.has-key($breakpoints, $min-breakpoint) and map.has-key($breakpoints, $max-breakpoint) {
-    $min-value: map.get($breakpoints, $min-breakpoint);
-    $max-value: map.get($breakpoints, $max-breakpoint);
-    
-    @if $min-value >= $max-value {
-      @error "Минимальный брейкпоинт '#{$min-breakpoint}' (#{$min-value}) должен быть меньше максимального '#{$max-breakpoint}' (#{$max-value})";
-    }
-    
-    @media (min-width: $min-value) and (max-width: $max-value) {
-      @content;
-    }
-  }
-  @else {
-    @if not map.has-key($breakpoints, $min-breakpoint) {
-      @error "Минимальный брейкпоинт '#{$min-breakpoint}' не найден. Используйте: #{map.keys($breakpoints)}";
-    }
-    @if not map.has-key($breakpoints, $max-breakpoint) {
-      @error "Максимальный брейкпоинт '#{$max-breakpoint}' не найден. Используйте: #{map.keys($breakpoints)}";
-    }
-  }
+	@if map.has-key($breakpoints, $min-breakpoint) and map.has-key($breakpoints, $max-breakpoint) {
+		$min-value: map.get($breakpoints, $min-breakpoint);
+		$max-value: map.get($breakpoints, $max-breakpoint);
+
+		@if $min-value >=$max-value {
+			@error "Минимальный брейкпоинт '#{$min-breakpoint}' (#{$min-value}) должен быть меньше максимального '#{$max-breakpoint}' (#{$max-value})";
+		}
+
+		@media (min-width: $min-value) and (max-width: $max-value - 1) {
+			@content;
+		}
+	}
+
+	@else {
+		@if not map.has-key($breakpoints, $min-breakpoint) {
+			@error "Минимальный брейкпоинт '#{$min-breakpoint}' не найден. Используйте: #{map.keys($breakpoints)}";
+		}
+
+		@if not map.has-key($breakpoints, $max-breakpoint) {
+			@error "Максимальный брейкпоинт '#{$max-breakpoint}' не найден. Используйте: #{map.keys($breakpoints)}";
+		}
+	}
 }

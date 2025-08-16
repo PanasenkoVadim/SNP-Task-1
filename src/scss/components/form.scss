@@ -2,7 +2,7 @@
 
 .form {
 	background-color: helpers.$white;
-	padding: 20px 20px 30px;
+	padding: 20px 20px 40px;
 	border-radius: 30px;
 	display: grid;
 	gap: 30px;
@@ -10,11 +10,21 @@
 	@include helpers.breakpoint(md) {
 		padding: 60px;
 		gap: 33px;
+		border-radius: 50px;
+	}
+
+	&__block .heading {
+		margin-bottom: 40px;
+
+		@include helpers.breakpoint(md) {
+			margin-bottom: 100px;
+		}
 	}
 
 	&__grid {
 		display: grid;
 		gap: 30px;
+
 		@include helpers.breakpoint(md) {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 33px 20px;
@@ -37,6 +47,10 @@
 			border-radius: 10px;
 			padding: 10px;
 
+			@include helpers.breakpoint(md) {
+				padding: 20px;
+			}
+
 			&::placeholder {
 				color: helpers.$gray300;
 			}
@@ -46,9 +60,21 @@
 			}
 		}
 
+		input {
+			height: 43px;
+
+			@include helpers.breakpoint(md) {
+				height: 68px;
+			}
+		}
+
 		textarea {
 			resize: none;
 			min-height: 132px;
+
+			@include helpers.breakpoint(md) {
+				min-height: 150px;
+			}
 		}
 	}
 

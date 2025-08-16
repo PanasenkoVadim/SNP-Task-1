@@ -1,4 +1,4 @@
-@use "../helpers/index.scss" as helpers;
+@use "../helpers" as helpers;
 
 *,
 *::before,
@@ -33,6 +33,7 @@ textarea {
 
 a {
 	text-decoration: none;
+	color: helpers.$black;
 }
 
 ul,
@@ -72,7 +73,7 @@ select {
 
 	@include helpers.breakpoint(md) {
 		font-size: 59px;
-		line-height: 114%;
+		line-height: 124%;
 		letter-spacing: 0;
 	}
 }
@@ -152,9 +153,8 @@ body,
 	}
 
 	.h2 {
-		margin-bottom: 20px;
 		max-width: 723px;
-		margin: 0 auto;
+		margin: 0 auto 20px;
 
 		@include helpers.breakpoint(md) {
 			margin-bottom: 30px;

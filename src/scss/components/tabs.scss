@@ -14,13 +14,21 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		column-gap: 30px;
-		row-gap: 10px;
+		gap: 10px;
 
-		.link.active {
-			color: helpers.$orange200;
-			background-position: 0;
-			background-size: 100% 100%;
+		@include helpers.breakpoint(md) {
+			flex-wrap: nowrap;
+			gap: 30px;
+		}
+
+		.link {
+			padding-bottom: 5px;
+
+			&.active {
+				color: helpers.$orange200;
+				background-position: 0;
+				background-size: 100% 100%;
+			}
 		}
 	}
 
@@ -60,20 +68,6 @@
 
 			@include helpers.breakpoint(lg) {
 				grid-template-columns: repeat(3, 1fr);
-			}
-
-			.card-tour {
-				width: 100%;
-				min-height: 318px;
-				max-width: 450px;
-
-				@include helpers.breakpoint(lg) {
-					min-height: 531px;
-				}
-
-				@include helpers.breakpoint(lg) {
-					max-width: 370px;
-				}
 			}
 		}
 	}
