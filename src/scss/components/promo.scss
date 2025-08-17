@@ -39,7 +39,7 @@
 			border-radius: 20px;
 			
 			@include helpers.breakpoint(md) {
-				border-radius: 30px;
+				border-radius: 50px;
 			}
 		}
 	}

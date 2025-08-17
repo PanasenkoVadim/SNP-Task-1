@@ -32,5 +32,9 @@
 		@include helpers.breakpoint(md) {
 			max-width: 400px;
 		}
+
+		@include helpers.breakpoint(lg) {
+			max-width: 562px;
+		}
 	}
 }

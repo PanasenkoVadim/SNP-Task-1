@@ -108,6 +108,10 @@
 	}
 
 	&__description {
+		@include helpers.breakpoint(md) {
+			max-width: 554px;
+		}
+		
 		ul {
 			padding-left: 24px;
 			list-style: disc;
@@ -162,6 +166,9 @@
 		.h3 {
 			@include helpers.max-breakpoint(sm) {
 				padding-top: 7px;
+			}
+			@include helpers.breakpoint(md) {
+				padding-bottom: 5px;
 			}
 		}
 

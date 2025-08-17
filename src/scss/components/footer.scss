@@ -17,7 +17,8 @@
 			padding: 30px 0;
 		}
 	}
-	&__text{
+
+	&__text {
 		color: helpers.$gray300;
 	}
 
@@ -33,6 +34,10 @@
 			display: flex;
 			align-items: center;
 			gap: 4px;
+
+			@include helpers.breakpoint(md) {
+				gap: 14px;
+			}
 		}
 	}
 }

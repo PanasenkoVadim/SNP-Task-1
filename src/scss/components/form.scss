@@ -13,6 +13,10 @@
 		border-radius: 50px;
 	}
 
+	@include helpers.breakpoint(lg){
+	 padding: 70px;
+	}
+
 	&__block .heading {
 		margin-bottom: 40px;
 

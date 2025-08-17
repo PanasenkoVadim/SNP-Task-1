@@ -10,7 +10,7 @@
 	color: helpers.$white;
 	opacity: 1;
 
-	@include helpers.breakpoint(md){
+	@include helpers.breakpoint(md) {
 		padding: 28px 0;
 	}
 
@@ -46,8 +46,12 @@
 		align-items: center;
 		justify-content: space-between;
 
-		@include helpers.breakpoint(md){
+		@include helpers.breakpoint(md) {
 			padding: 0 57px;
+		}
+
+		@include helpers.breakpoint(lg) {
+			padding: 0;
 		}
 	}
 
@@ -77,6 +81,10 @@
 		&__list {
 			display: flex;
 			gap: 30px;
+
+			@include helpers.breakpoint(lg) {
+				gap: 50px;
+			}
 		}
 	}
 }

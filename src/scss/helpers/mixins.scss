@@ -19,7 +19,7 @@
 	@if map.has-key($breakpoints, $breakpoint) {
 		$value: map.get($breakpoints, $breakpoint);
 
-		@media (max-width: $value) {
+		@media (max-width: $value - 0.1) {
 			@content;
 		}
 	}
@@ -38,7 +38,7 @@
 			@error "Минимальный брейкпоинт '#{$min-breakpoint}' (#{$min-value}) должен быть меньше максимального '#{$max-breakpoint}' (#{$max-value})";
 		}
 
-		@media (min-width: $min-value) and (max-width: $max-value - 1) {
+		@media (min-width: $min-value) and (max-width: $max-value - 0.1) {
 			@content;
 		}
 	}

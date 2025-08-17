@@ -22,7 +22,10 @@
 		}
 
 		.link {
-			padding-bottom: 5px;
+
+			@include helpers.breakpoint(md) {
+				padding-bottom: 5px;
+			}
 
 			&.active {
 				color: helpers.$orange200;
@@ -68,6 +71,7 @@
 
 			@include helpers.breakpoint(lg) {
 				grid-template-columns: repeat(3, 1fr);
+				gap: 30px;
 			}
 		}
 	}
