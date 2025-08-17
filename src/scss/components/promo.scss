@@ -1,0 +1,54 @@
+@use "../helpers" as helpers;
+
+.promo {
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		max-width: 291px;
+		margin: 0 auto;
+		gap: 30px;
+
+		@include helpers.breakpoint(md) {
+			flex-direction: row;
+			max-width: 770px;
+			text-align: left;
+		}
+	}
+
+	.h3 {
+		margin-bottom: 20px;
+	}
+
+	&__img {
+		width: 130px;
+		height: 133px;
+		flex-shrink: 0;
+
+		@include helpers.breakpoint(md) {
+			width: 370px;
+			height: 370px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 20px;
+			
+			@include helpers.breakpoint(md) {
+				border-radius: 50px;
+			}
+		}
+	}
+
+	&__description p {
+		color: helpers.$gray300;
+
+		a {
+			color: helpers.$black;
+		}
+	}
+}

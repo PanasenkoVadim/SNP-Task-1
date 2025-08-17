@@ -6,6 +6,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>YourTour | Идеальные путешествия существуют</title>
 	<meta name="description" content="Идейные соображения высшего порядка, а также рамки и место обучения кадров">
+	<link rel="apple-touch-icon" sizes="57x57" href="/public/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/public/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/public/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/public/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/public/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/public/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/public/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/public/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/public/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/public/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+	<link rel="icon" href="/public/favicon.ico" sizes="any">
+	<link rel="manifest" href="/public/manifest.json">
 	<link rel="stylesheet" href="./build/css/global.css">
 	<link rel="stylesheet" href="./build/css/main.css">
 	<script src="./build/js/global.js" defer></script>
@@ -14,13 +29,516 @@
 
 <body>
 	<div class="wrapper">
-		<header>
+		<header class="header js-header">
+			<div class="container">
+				<a class="header__logo" href="/public">
+					<span></span>
+				</a>
+				<nav class="header__nav">
+					<ul class="header__nav__list">
+						<li><a class="link" href="/public/todo.html">Туры</a></li>
+						<li><a class="link" href="">Создать тур</a></li>
+						<li><a class="link" href="">Отзывы</a></li>
+						<li><a class="link" href="">Истории</a></li>
+					</ul>
+				</nav>
+				<div class="header__link">
+					<a class="link" href="tel:+79999999999">+7 999 999 99 99</a>
+				</div>
+			</div>
 		</header>
 		<main>
-			<div class="container">
-			</div>
+			<section class="hero">
+				<div class="container">
+					<h1 class="h1">Идеальные путешествия существуют</h1>
+					<p>Идейные соображения высшего порядка,
+						а также рамки и место обучения кадров
+					</p>
+					<a href="#selectTour" class="btn btn--accent p-small">Найти тур</a>
+				</div>
+			</section>
+			<section id="selectTour" class="tabs js-tabs">
+				<div class="container">
+					<div class="heading">
+						<h2 class="h2">Выбери свой тур</h2>
+						<div class="tabs__menu">
+							<span class="link p-big js-tabsTrigger">Популярные</span>
+							<span class="link p-big js-tabsTrigger">Авторские</span>
+							<span class="link p-big js-tabsTrigger">Походы</span>
+							<span class="link p-big js-tabsTrigger">Сплавы</span>
+							<span class="link p-big js-tabsTrigger">Велопрогулки</span>
+						</div>
+					</div>
+					<div class="tabs__content js-tabsContent">
+						<div class="tabs__content__item js-tabsItem">
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-1.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-2.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-3.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-4.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-5.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-6.webp" alt="Путешествие в горы">
+							</a>
+						</div>
+						<div class="tabs__content__item js-tabsItem">
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-4.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-6.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-5.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-3.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-2.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-1.webp" alt="Путешествие в горы">
+							</a>
+						</div>
+						<div class="tabs__content__item js-tabsItem">
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-6.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-5.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-4.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-3.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-2.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-1.webp" alt="Путешествие в горы">
+							</a>
+						</div>
+						<div class="tabs__content__item js-tabsItem">
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-3.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-6.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-2.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-5.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-4.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-1.webp" alt="Путешествие в горы">
+							</a>
+						</div>
+						<div class="tabs__content__item js-tabsItem">
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-5.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-1.webp" alt="Путешествие в горы">
+							</a>
+							<a href="#" class="card-tour">
+								<h3 class="h3">Путешествие в&nbsp;горы</h3>
+								<p class="p-small">от 80 000 руб</p>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/card-tour-photo-2.webp" alt="Путешествие в горы">
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="form__block">
+				<div class="container">
+					<div class="heading">
+						<h2 class="h2">Собери свой тур</h2>
+						<p>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
+					</div>
+					<form class="form js-form" method="POST" action="/api/feedback">
+						<div class="form__grid">
+							<div class="form__field">
+								<label for="name">Имя</label>
+								<input id="name" name="name" type="text" data-validation="required" placeholder="Введите Ваше имя">
+								<span class="form__error"></span>
+							</div>
+
+							<div class="form__field">
+								<label>Направление</label>
+								<div class="select">
+									<select class="js-select" name="tour" id="">
+										<option disabled selected hidden value="">Куда хотите ехать</option>
+										<option value="value1">Вариант 1</option>
+										<option value="value2">Вариант 2</option>
+										<option value="value3">Вариант 3</option>
+									</select>
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+
+							<div class="form__field">
+								<label for="">Email</label>
+								<input name="email" type="text" data-validation="email" placeholder="example@mail.com">
+								<span class="form__error"></span>
+							</div>
+
+							<div class="form__field">
+								<label for="">Телефон</label>
+								<input name="phone" type="text" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
+									data-mask="+ {7} (000) 000-00-00" data-validation="phone">
+								<span class="form__error"></span>
+							</div>
+
+							<div class="form__field">
+								<label for="">Дата от</label>
+								<input class="js-dateFrom" name="date-from" type="date" min="" data-validation="required">
+								<span class="form__error"></span>
+							</div>
+
+							<div class="form__field">
+								<label for="">Дата до</label>
+								<input name="date-to" type="date" data-validation="required">
+								<span class="form__error"></span>
+							</div>
+						</div>
+
+
+						<div class="form__field">
+							<label for="">Комментарий</label>
+							<textarea name="comment"></textarea>
+							<span class="form__error"></span>
+						</div>
+
+						<div class="form__field">
+							<label>Вам есть 18 лет?</label>
+							<div class="radioGroup js-radioGroup" data-validation="required">
+								<div class="radioBtn">
+									<label>
+										<input type="radio" name="age" value="yes">
+										<div class="radioBtn__custom"></div>
+										<span>Да</span>
+									</label>
+								</div>
+								<div class="radioBtn">
+									<label>
+										<input type="radio" name="age" value="no">
+										<span class="radioBtn__custom"></span>
+										<span>Нет</span>
+									</label>
+								</div>
+								<span class="form__error"></span>
+							</div>
+						</div>
+
+						<div class="form__field">
+							<div class="checkbox js-checkbox">
+								<label>
+									<input type="checkbox" name="agreement">
+									<span class="checkbox__custom"></span>
+								</label>
+								<div class="checkbox__text p-small">Нажимая кнопку, я принимаю условия <a class="link"
+										href="/policy">Лицензионного договора</a></div>
+							</div>
+							<span class="form__error"></span>
+						</div>
+
+						<div class="form__buttons">
+							<button class="btn btn--primary">Найти тур</button>
+							<button class="btn btn--secondary js-formReset" type="button">Сбросить</button>
+						</div>
+					</form>
+
+				</div>
+			</section>
+			<section class="reviews">
+				<div class="container">
+					<div class="heading">
+						<h2 class="h2">Отзывы наших путешественников</h2>
+						<p>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
+					</div>
+					<div class="reviews__list">
+						<div class="card-review">
+							<p class="p-big">Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает
+								широкому кругу (специалистов) участие в формировании новых предложений. Идейные соображения высшего
+								порядка, а также начало повседневной работы по формированию позиции позволяет оценить значение модели
+								развития.</p>
+							<div class="card-review__bottom">
+								<h3 class="h3">Мария</h3>
+								<p class="p-small">Тур: Вдали от дома</p>
+								<img src="../public/static/images/review-photo-1.webp" alt="#">
+							</div>
+						</div>
+						<div class="card-review">
+							<p class="p-big">Равным образом постоянный количественный рост и сфера нашей активности играет важную роль
+								в
+								формировании системы обучения кадров, соответствует насущным потребностям.
+								<br>
+								<br>
+								Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности
+								обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Повседневная
+								практика
+								показывает, что реализация намеченных плановых заданий в значительной степени обуславливает создание
+								модели развития.
+							</p>
+							<div class="card-review__bottom">
+								<h3 class="h3">Павел</h3>
+								<p class="p-small">Тур: Путешествие в горы </p>
+								<img src="../public/static/images/review-photo-2.webp" alt="#">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="gallery">
+				<div class="heading">
+					<h2 class="h2">Фотографии путешествий</h2>
+					<p>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
+				</div>
+				<div class="gallery__inner">
+					<div class="gallery__row">
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-1.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-2.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-3.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-4.webp" alt="">
+						</div>
+					</div>
+					<div class="gallery__row">
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-5.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-6.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-7.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-8.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-9.webp" alt="">
+						</div>
+					</div>
+					<div class="gallery__row">
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-10.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-11.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-12.webp" alt="">
+						</div>
+						<div class="gallery__item">
+							<img src="../public/static/images/travel-photo-13.webp" alt="">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="history">
+				<div class="container">
+					<div class="heading">
+						<h2 class="h2">Истории путешествий</h2>
+						<p>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
+					</div>
+					<div class="history__list">
+						<div class="card-history__wrapper">
+							<a class="card-history" href="#">
+								<h3 class="h3">Автостопом в&nbsp;Стамбул</h3>
+								<div class="card-history__description">
+									Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу
+									(специалистов) участие в формировании новых предложений:
+									<br>
+									<br>
+									<ul>
+										<li>вкусная еда</li>
+										<li>дешевый транспорт</li>
+										<li>красивый город.</li>
+									</ul>
+								</div>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/story-photo-1.webp" alt="Автостопом в Стамбул">
+							</a>
+							<div class="card-history__links">
+								<ul>
+									<li><a class="link" href="">telegram</a></li>
+									<li><a class="link" href="">facebook</a></li>
+									<li><a class="link" href="">YouTube</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="card-history__wrapper">
+							<a class="card-history" href="#">
+								<h3 class="h3">Автостопом в&nbsp;Стамбул</h3>
+								<div class="card-history__description">
+									Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу
+									(специалистов) участие в формировании новых предложений:
+								</div>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/story-photo-2.webp" alt="Автостопом в Стамбул">
+							</a>
+							<div class="card-history__links">
+								<ul>
+									<li><a class="link" href="">telegram</a></li>
+									<li><a class="link" href="">facebook</a></li>
+									<li><a class="link" href="">ВКонтакте</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="card-history__wrapper">
+							<a class="card-history" href="#">
+								<h3 class="h3">Автостопом в&nbsp;Стамбул</h3>
+								<div class="card-history__description">
+									Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу
+									(специалистов) участие в формировании новых предложений:
+								</div>
+								<span class="btn btn--detail">Подробнее</span>
+								<img src="../public/static/images/story-photo-3.webp" alt="Автостопом в Стамбул">
+							</a>
+							<div class="card-history__links">
+								<ul>
+									<li><a class="link" href="">telegram</a></li>
+									<li><a class="link" href="">facebook</a></li>
+									<li><a class="link" href="">ВКонтакте</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="promo">
+				<div class="container">
+					<div class="promo__inner">
+						<div class="promo__img">
+							<img src="../public/static/images/promo-photo.webp" alt="">
+						</div>
+						<div class="promo__description">
+							<h3 class="h3">
+								Пора в путешествие вместе с нами!
+							</h3>
+							<p>Напиши на почту и узнай подробности <br> на <a class="link"
+									href="mailto:yourtour@gmail.com">yourtour@gmail.com</a></p>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
-		<footer></footer>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__inner">
+					<div class="footer__text">Наши социальные сети</div>
+					<ul class="footer__list">
+						<li><a href=""><img src="../public/static/images/telegram.svg" alt=""><span class="link">telegram</span></a>
+						</li>
+						<li><a href=""><img src="../public/static/images/fb.svg" alt=""><span class="link">facebook</span></a></li>
+						<li><a href=""><img src="../public/static/images/vk.svg" alt=""><span class="link">vkontakte</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
 	</div>
 
 </body>

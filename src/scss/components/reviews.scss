@@ -1,0 +1,14 @@
+@use "../helpers" as helpers;
+
+.reviews {
+	&__list {
+		display: grid;
+		gap: 18px;
+		@include helpers.breakpoint(md){
+			grid-template-columns: 1fr 1fr;
+		}
+		@include helpers.breakpoint(lg){
+			gap: 30px;
+		}
+	}
+}

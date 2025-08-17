@@ -1,0 +1,64 @@
+@use "../helpers" as helpers;
+
+.select {
+	position: relative;
+	width: 100%;
+
+	select {
+		color: helpers.$gray300;
+		width: 100%;
+		height: 46px;
+		padding: 10px 40px 10px 10px;
+		background-color: helpers.$beige100;
+		border: 1px solid helpers.$beige200;
+		border-radius: 10px;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		cursor: pointer;
+
+		@include helpers.breakpoint(md) {
+			height: 68px;
+			padding: 20px;
+			padding: 10px 40px 10px 10px;
+		}
+
+		&.has-value {
+			color: #333;
+		}
+
+		&:focus {
+			outline: none;
+			border-color: helpers.$beige200;
+		}
+
+		&:focus+.select-arrow,
+		&:active+.select-arrow {
+			transform: translateY(-50%) rotate(225deg);
+		}
+	}
+
+	option {
+		background-color: #f5f5f5;
+		padding: 10px;
+		color: #333;
+
+		&[disabled][selected] {
+			color: #999;
+		}
+	}
+
+	&-arrow {
+		position: absolute;
+		top: 50%;
+		right: 24px;
+		width: 10px;
+		height: 10px;
+		transform: translateY(-50%) rotate(45deg);
+		border-right: 2px solid #333;
+		border-bottom: 2px solid #333;
+		pointer-events: none;
+		transition: transform 0.2s ease;
+
+	}
+}
