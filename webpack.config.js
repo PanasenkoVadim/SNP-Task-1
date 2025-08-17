@@ -25,8 +25,6 @@ Object.values(entries).map((entry) =>
 )
 
 module.exports = (env, args) => {
-  const isDev = args.mode !== "production"
-
   const config = {
     watchOptions: {
       ignored: /node_modules/
