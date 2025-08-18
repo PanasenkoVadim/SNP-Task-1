@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["master"]  # или ваша основная ветка (master/main)
+    branches: ["master"]  
 
 jobs:
   deploy:
@@ -13,13 +13,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20  # или ваша версия Node
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build project
-        run: npm run build  # ваш скрипт сборки
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
