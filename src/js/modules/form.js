@@ -40,16 +40,11 @@ function initMasks() {
 		const mask = field.dataset.mask
 		const config = { mask }
 		if (mask === "+ {7} (000) 000-00-00") {
-			config.prepare = function (value) {
-				if (value.startsWith('8')) {
+			config.prepare = function (value, masked) {
+				if (!masked.value.length && value.startsWith('8')) {
 					return '+7' + value.substring(1)
 				}
 				return value
-			}
-			config.commit = function (value, masked) {
-				if (value.startsWith('8')) {
-					masked.value = '+7' + value.substring(1)
-				}
 			}
 		}
 		IMask(field, config)
