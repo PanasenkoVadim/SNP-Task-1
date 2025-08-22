@@ -6,32 +6,14 @@ export function initForm() {
 
 	initMasks()
 	setMinDate()
-	validation(form, sendForm)
+	validation(form, formCallback)
 	initResetBtn(form)
 }
 
-async function sendForm(form) {
-	try {
-		const url = form.action
-		const formData = new FormData(form)
-		const data = Object.fromEntries(formData)
-
-		const response = await fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(data),
-		})
-
-		if (!response.ok) {
-			throw new Error(response.status)
-		}
-
-		alert("Форма отправлена")
-	} catch (e) {
-		alert("Ошибка отправки формы: " + e.message)
-	}
+function formCallback(form) {
+	const tourBlock = document.getElementById("selectTour")
+	tourBlock.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
+	form.reset()
 }
 
 function initMasks() {

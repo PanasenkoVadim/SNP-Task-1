@@ -12,6 +12,8 @@
 		background-color: helpers.$beige100;
 		border: 1px solid helpers.$beige200;
 		border-radius: 10px;
+		transition: .2s;
+		transition-property: background-color, border;
 		appearance: none;
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -23,13 +25,21 @@
 			padding: 10px 40px 10px 10px;
 		}
 
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: helpers.$beige200;
+			}
+		}
+
 		&.has-value {
 			color: #333;
 		}
 
 		&:focus {
 			outline: none;
-			border-color: helpers.$beige200;
+			border-color: helpers.$gray300;
+			background-color: helpers.$beige200;
 		}
 
 		&:focus+.select-arrow,
