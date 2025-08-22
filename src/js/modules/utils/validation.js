@@ -1,5 +1,5 @@
 const tel = /^[+] {1}[0-9]{1} [(]{1}[0-9]{3}[)]{1} [0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/
-
+const dateCharsRegexp = /[0-9.]+/m
 const emailRegexp =
 	/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Zа-яА-Я\-0-9]+\.)+[a-zA-Zа-яА-Я]{2,}))$/
 
@@ -18,6 +18,23 @@ const validationMethods = {
 	email: {
 		validate: (val) => emailRegexp.test(val),
 		msg: "Указанная почта некорректна"
+	},
+	date: {
+		validate: (val) => {
+			if (!val) return true
+
+			const charsValid = matchStr(dateCharsRegexp, val)
+			if (!charsValid) return false
+
+			const regexp = /[0-9]{2}.[0-9]{2}.[0-9]{4}/
+			const formatValid = val.match(regexp)?.[0] === val
+			const dateParts = val.split(".")
+			const validDate = dateParts[0] < 32 && dateParts[1] < 13
+			const validYear = dateParts[2] <= new Date().getFullYear() && dateParts[2] > new Date().getFullYear() - 100
+
+			return formatValid && validDate && validYear
+		},
+		msg: "Неверный формат даты"
 	},
 	minToday: {
 		validate: (val) => {
