@@ -31,15 +31,15 @@
 	<div class="wrapper">
 		<header class="header js-header">
 			<div class="container">
-				<a class="header__logo" href="/">
+				<div class="header__logo js-headerLogo">
 					<span></span>
-				</a>
+				</div>
 				<nav class="header__nav">
 					<ul class="header__nav__list">
-						<li><a class="link" href="/todo.html">Туры</a></li>
-						<li><a class="link" href="">Создать тур</a></li>
-						<li><a class="link" href="">Отзывы</a></li>
-						<li><a class="link" href="">Истории</a></li>
+						<li><a class="link" href="#selectTour">Туры</a></li>
+						<li><a class="link" href="#createTour">Создать тур</a></li>
+						<li><a class="link" href="#reviews">Отзывы</a></li>
+						<li><a class="link" href="#history">Истории</a></li>
 					</ul>
 				</nav>
 				<div class="header__link">
@@ -245,7 +245,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="form__block">
+			<section id="createTour" class="form__block">
 				<div class="container">
 					<div class="heading">
 						<h2 class="h2">Собери свой тур</h2>
@@ -346,7 +346,7 @@
 
 				</div>
 			</section>
-			<section class="reviews">
+			<section id="reviews" class="reviews">
 				<div class="container">
 					<div class="heading">
 						<h2 class="h2">Отзывы наших путешественников</h2>
@@ -438,7 +438,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="history">
+			<section id="history" class="history">
 				<div class="container">
 					<div class="heading">
 						<h2 class="h2">Истории путешествий</h2>
