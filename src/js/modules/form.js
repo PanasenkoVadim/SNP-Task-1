@@ -1,37 +1,51 @@
 import IMask from "imask"
 import { validation } from "./utils/validation"
+import { Calendar } from "vanilla-calendar-pro"
 
 export function initForm() {
 	const form = document.querySelector(".js-form")
 
 	initMasks()
-	setMinDate()
-	validation(form, sendForm)
+	validation(form, formCallback)
 	initResetBtn(form)
+	initVanillaCalendar()
 }
 
-async function sendForm(form) {
-	try {
-		const url = form.action
-		const formData = new FormData(form)
-		const data = Object.fromEntries(formData)
+function initVanillaCalendar() {
+	const calendars = document.querySelectorAll(".js-calendar")
+	const today = new Date().toISOString().split('T')[0]
+	calendars.forEach(c => {
+		const calendar = new Calendar(c, {
+			inputMode: true,
+			locale: 'ru-RU',
+			positionToInput: 'auto',
+			displayDateMin: today,
+			selectedTheme: 'light',
+			onChangeToInput(self) {
+				if (!self.context.inputElement) return
+				if (self.context.selectedDates[0]) {
+					const date = new Date(self.context.selectedDates[0])
+					const day = String(date.getDate()).padStart(2, '0')
+					const month = String(date.getMonth() + 1).padStart(2, '0')
+					const year = date.getFullYear()
 
-		const response = await fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
+					self.context.inputElement.value = `${day}.${month}.${year}`
+
+					self.hide()
+				} else {
+					self.context.inputElement.value = ''
+				}
 			},
-			body: JSON.stringify(data),
 		})
+		calendar.init()
 
-		if (!response.ok) {
-			throw new Error(response.status)
-		}
+	})
+}
 
-		alert("Форма отправлена")
-	} catch (e) {
-		alert("Ошибка отправки формы: " + e.message)
-	}
+function formCallback(form) {
+	const tourBlock = document.getElementById("selectTour")
+	tourBlock.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" })
+	form.reset()
 }
 
 function initMasks() {
@@ -49,12 +63,6 @@ function initMasks() {
 		}
 		IMask(field, config)
 	})
-}
-
-function setMinDate() {
-	const dateInput = document.querySelector('.js-dateFrom')
-	const today = new Date().toISOString().split('T')[0]
-	dateInput.min = today
 }
 
 function initResetBtn(form) {

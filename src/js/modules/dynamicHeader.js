@@ -1,8 +1,11 @@
 export function initDynamicHeader() {
 	const header = document.querySelector(".js-header")
+	const headerLogo = header.querySelector(".js-headerLogo")
 	const SCROLL_THRESHOLD = 450
 	let lastScrollPosition = window.scrollY
 	let ticking = false
+
+	headerLogo.addEventListener("click", () => window.scrollTo(0, 0))
 
 	const handleScroll = () => {
 		const currentScrollPosition = window.scrollY
@@ -17,12 +20,7 @@ export function initDynamicHeader() {
 
 		if (currentScrollPosition >= SCROLL_THRESHOLD) {
 			header.classList.add("fixed")
-
-			if (lastScrollPosition > currentScrollPosition) {
-				header.classList.add("upfixed")
-			} else {
-				header.classList.remove("upfixed")
-			}
+			header.classList.add("upfixed")
 		} else {
 			header.classList.remove("upfixed")
 		}

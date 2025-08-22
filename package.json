@@ -28,6 +28,7 @@
 		"webpack-dev-server": "^5.2.2"
 	},
 	"dependencies": {
-		"imask": "^7.6.1"
+		"imask": "^7.6.1",
+		"vanilla-calendar-pro": "^3.0.5"
 	}
 }

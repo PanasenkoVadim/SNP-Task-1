@@ -13,8 +13,8 @@
 		border-radius: 50px;
 	}
 
-	@include helpers.breakpoint(lg){
-	 padding: 70px;
+	@include helpers.breakpoint(lg) {
+		padding: 70px;
 	}
 
 	&__block .heading {
@@ -51,6 +51,8 @@
 			border-radius: 10px;
 			padding: 10px;
 			width: 100%;
+			transition: .2s;
+			transition-property: background-color, border;
 
 			@include helpers.breakpoint(md) {
 				padding: 20px;
@@ -61,7 +63,18 @@
 			}
 
 			&.invalid {
-				border-color: helpers.$red;
+				border-color: helpers.$red !important;
+			}
+
+			&:focus {
+				border-color: helpers.$gray300;
+				background-color: helpers.$beige200;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background-color: helpers.$beige200;
+				}
 			}
 		}
 

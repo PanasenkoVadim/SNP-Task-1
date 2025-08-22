@@ -3,6 +3,9 @@ const tel = /^[+] {1}[0-9]{1} [(]{1}[0-9]{3}[)]{1} [0-9]{3}[-]{1}[0-9]{2}[-]{1}[
 const emailRegexp =
 	/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Zа-яА-Я\-0-9]+\.)+[a-zA-Zа-яА-Я]{2,}))$/
 
+const today = new Date()
+today.setHours(0, 0, 0, 0)
+
 const validationMethods = {
 	required: {
 		validate: (val) => val,
@@ -15,6 +18,22 @@ const validationMethods = {
 	email: {
 		validate: (val) => emailRegexp.test(val),
 		msg: "Указанная почта некорректна"
+	},
+	minToday: {
+		validate: (val) => {
+			if (!val) return true
+
+			let date
+			if (val.includes('.')) {
+				const [day, month, year] = val.split('.').map(Number)
+				date = new Date(year, month - 1, day)
+			} else {
+				date = new Date(val)
+			}
+
+			return date >= today
+		},
+		msg: `Минимальная дата — ${today.toLocaleDateString()}`
 	}
 }
 
