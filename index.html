@@ -287,13 +287,15 @@
 
 							<div class="form__field">
 								<label for="">Дата от</label>
-								<input class="js-dateFrom" name="date-from" type="date" min="" data-validation="required">
+								<input class="js-calendar" name="date-from" type="text" placeholder="ДД.ММ.ГГГГ" data-mask="00.00.0000"
+									data-validation="required minToday" autocomplete="off">
 								<span class="form__error"></span>
 							</div>
 
 							<div class="form__field">
 								<label for="">Дата до</label>
-								<input name="date-to" type="date" data-validation="required">
+								<input class="js-calendar" name="date-to" type="text" placeholder="ДД.ММ.ГГГГ" data-mask="00.00.0000"
+									data-validation="required minToday" autocomplete="off">
 								<span class="form__error"></span>
 							</div>
 						</div>

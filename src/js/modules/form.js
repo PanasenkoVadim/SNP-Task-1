@@ -1,13 +1,45 @@
 import IMask from "imask"
 import { validation } from "./utils/validation"
+import { Calendar } from "vanilla-calendar-pro"
 
 export function initForm() {
 	const form = document.querySelector(".js-form")
 
 	initMasks()
-	setMinDate()
 	validation(form, formCallback)
 	initResetBtn(form)
+	initVanillaCalendar()
+}
+
+function initVanillaCalendar() {
+	const calendars = document.querySelectorAll(".js-calendar")
+	const today = new Date().toISOString().split('T')[0]
+	calendars.forEach(c => {
+		const calendar = new Calendar(c, {
+			inputMode: true,
+			locale: 'ru-RU',
+			positionToInput: 'auto',
+			displayDateMin: today,
+			selectedTheme: 'light',
+			onChangeToInput(self) {
+				if (!self.context.inputElement) return
+				if (self.context.selectedDates[0]) {
+					const date = new Date(self.context.selectedDates[0])
+					const day = String(date.getDate()).padStart(2, '0')
+					const month = String(date.getMonth() + 1).padStart(2, '0')
+					const year = date.getFullYear()
+
+					self.context.inputElement.value = `${day}.${month}.${year}`
+
+					self.hide()
+				} else {
+					self.context.inputElement.value = ''
+				}
+			},
+		})
+		calendar.init()
+
+	})
 }
 
 function formCallback(form) {
@@ -31,12 +63,6 @@ function initMasks() {
 		}
 		IMask(field, config)
 	})
-}
-
-function setMinDate() {
-	const dateInput = document.querySelector('.js-dateFrom')
-	const today = new Date().toISOString().split('T')[0]
-	dateInput.min = today
 }
 
 function initResetBtn(form) {
