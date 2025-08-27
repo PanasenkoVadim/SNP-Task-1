@@ -169,7 +169,8 @@ body,
 	}
 }
 
-.link {
+.link,
+.link-social {
 	position: relative;
 	color: inherit;
 	background: linear-gradient(transparent calc(100% - 1px), currentColor 2px);
@@ -190,6 +191,14 @@ body,
 			background-position: 0;
 			background-size: 100% 100%;
 			color: helpers.$green400;
+		}
+	}
+}
+
+.link-social {
+	@media (hover: hover) {
+		&:active {
+			color: helpers.$orange200;
 		}
 	}
 }
