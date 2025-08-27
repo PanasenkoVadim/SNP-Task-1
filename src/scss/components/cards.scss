@@ -121,6 +121,10 @@
 		ul {
 			padding-left: 24px;
 			list-style: disc;
+
+			@include helpers.breakpoint(md) {
+				padding-left: 30px;
+			}
 		}
 	}
 
@@ -158,7 +162,7 @@
 		margin-bottom: 40px;
 
 		@include helpers.breakpoint(md) {
-			line-height: 122%;
+			line-height: 121%;
 			margin-bottom: 70px;
 		}
 	}
@@ -170,8 +174,8 @@
 		margin-top: auto;
 
 		.h3 {
-			@include helpers.max-breakpoint(sm) {
-				padding-top: 7px;
+			@include helpers.max-breakpoint(md) {
+				padding-top: 12px;
 			}
 
 			@include helpers.breakpoint(md) {

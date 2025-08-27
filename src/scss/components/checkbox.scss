@@ -4,6 +4,10 @@
 	display: flex;
 	gap: 11px;
 
+	@include helpers.breakpoint(lg) {
+		gap: 19px;
+	}
+
 	input[type="checkbox"] {
 		position: absolute;
 		visibility: hidden;

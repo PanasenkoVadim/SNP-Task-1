@@ -6,8 +6,10 @@
 	margin: 0 auto 75px;
 
 	@include helpers.breakpoint(md) {
-		padding: 0 30px;
 		margin-bottom: 135px;
+	}
+	@include helpers.breakpoint(lg) {
+		padding: 0 30px;
 	}
 
 	&__inner {
