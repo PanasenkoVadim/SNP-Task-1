@@ -37,4 +37,11 @@
 			max-width: 562px;
 		}
 	}
+
+	h1 {
+		max-width: 914px;
+		@include helpers.breakpoint(lg) {
+			max-width: 768px;
+		}
+	}
 }
