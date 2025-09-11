@@ -39,28 +39,28 @@
     transition: height 0.1s linear;
 
     &__item {
+      position: absolute;
+      top: 0;
+      left: 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
       justify-content: center;
-      position: absolute;
-      left: 0;
-      top: 0;
       width: 100%;
       opacity: 0;
-      transform: translateY(40px);
-      pointer-events: none;
       visibility: hidden;
       transition:
         opacity 0.2s ease,
         transform 0.4s ease,
         visibility 0.4s ease;
+      transform: translateY(40px);
+      pointer-events: none;
+      gap: 18px;
 
       &.active {
         opacity: 1;
-        pointer-events: auto;
         visibility: visible;
         transform: translateY(0);
+        pointer-events: auto;
       }
 
       @include helpers.breakpoint(md) {

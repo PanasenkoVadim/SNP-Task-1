@@ -4,9 +4,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   width: 100%;
   padding: 32px 0;
-  z-index: 10;
   color: helpers.$white;
   opacity: 1;
 
@@ -17,10 +17,10 @@
   &.prefixed,
   &.upfixed {
     position: fixed;
+    width: 100%;
+    color: helpers.$black;
     background-color: rgba(243, 239, 232, 0.6);
     backdrop-filter: blur(20px);
-    color: helpers.$black;
-    width: 100%;
 
     .header__logo img {
       filter: brightness(0.1);
@@ -32,13 +32,13 @@
   }
 
   &.fixed {
-    transform: translateY(-110%);
     transition: transform 0.5s ease;
+    transform: translateY(-110%);
   }
 
   &.upfixed {
-    transform: translateY(0);
     transition: transform 0.5s ease;
+    transform: translateY(0);
   }
 
   .container {

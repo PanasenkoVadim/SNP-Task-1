@@ -4,11 +4,11 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     max-width: 291px;
     margin: 0 auto;
+    text-align: center;
     gap: 30px;
 
     @include helpers.breakpoint(md) {
@@ -23,9 +23,9 @@
   }
 
   &__img {
+    flex-shrink: 0;
     width: 130px;
     height: 133px;
-    flex-shrink: 0;
 
     @include helpers.breakpoint(md) {
       width: 370px;

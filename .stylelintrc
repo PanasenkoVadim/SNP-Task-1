@@ -1,29 +1,68 @@
 {
-  "extends": ["stylelint-config-recommended-scss", "stylelint-config-recess-order"],
   "plugins": ["stylelint-order"],
   "rules": {
-    "no-empty-source": true,
-    "no-duplicate-at-import-rules": true,
-    "no-duplicate-selectors": true,
-    "no-descending-specificity": null,
-    "block-no-empty": true,
-    "comment-no-empty": true,
-    "color-no-invalid-hex": true,
-    "scss/dollar-variable-pattern": "^[a-z][a-zA-Z0-9]*$",
-    "max-nesting-depth": 7,
-    "selector-max-compound-selectors": 7,
-    "selector-class-pattern": "^[a-z][a-zA-Z0-9-_]*$",
-    "order/properties-order": null,
-    "selector-no-qualifying-type": [
-      true,
+    "order/properties-order": [
       {
-        "ignore": ["attribute", "class"]
+        "groupName": "Позиционирование",
+        "properties": ["position", "top", "right", "bottom", "left", "z-index"]
+      },
+      {
+        "groupName": "Блочная модель",
+        "properties": [
+          "display", "flex", "flex-basis", "flex-direction", "flex-flow", "flex-grow", "flex-shrink", "flex-wrap",
+          "grid", "grid-area", "grid-template", "grid-template-areas", "grid-template-rows", "grid-template-columns", "grid-row", "grid-row-start", "grid-row-end", "grid-column", "grid-column-start", "grid-column-end", "grid-auto-rows", "grid-auto-columns", "grid-auto-flow", "grid-gap", "grid-row-gap", "grid-column-gap",
+          "align-content", "align-items", "align-self",
+          "justify-content", "justify-items", "justify-self",
+          "order",
+          "float", "clear",
+          "width", "min-width", "max-width", "height", "min-height", "max-height",
+          "padding", "padding-top", "padding-right", "padding-bottom", "padding-left",
+          "margin", "margin-top", "margin-right", "margin-bottom", "margin-left",
+          "overflow", "overflow-x", "overflow-y", "-webkit-overflow-scrolling", "-ms-overflow-x", "-ms-overflow-y", "-ms-overflow-style",
+          "clip", "box-sizing"
+        ]
+      },
+      {
+        "groupName": "Типографика",
+        "properties": [
+          "font", "font-family", "font-size", "font-style", "font-weight", "font-variant", "font-size-adjust", "font-stretch", "font-effect", "font-emphasize", "font-emphasize-position", "font-emphasize-style", "-webkit-font-smoothing", "-moz-osx-font-smoothing", "font-smooth",
+          "hyphens",
+          "color",
+          "text-align", "text-justify", "text-indent", "text-overflow", "text-decoration", "text-transform", "text-shadow",
+          "line-height", "letter-spacing", "word-spacing", "white-space",
+          "vertical-align",
+          "list-style", "list-style-type", "list-style-position", "list-style-image",
+          "content", "quotes",
+          "counter-increment", "counter-reset"
+        ]
+      },
+      {
+        "groupName": "Оформление",
+        "properties": [
+          "background", "background-color", "background-image", "background-position", "background-repeat", "background-size", "background-clip", "background-origin", "background-attachment",
+          "border", "border-style", "border-width", "border-color", "border-top", "border-top-style", "border-top-width", "border-top-color", "border-right", "border-right-style", "border-right-width", "border-right-color", "border-bottom", "border-bottom-style", "border-bottom-width", "border-bottom-color", "border-left", "border-left-style", "border-left-width", "border-left-color", "border-radius", "border-top-left-radius", "border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius", "border-collapse", "border-spacing",
+          "outline", "outline-style", "outline-width", "outline-color", "outline-offset",
+          "box-shadow", "filter", "backdrop-filter",
+          "opacity", "visibility", "mix-blend-mode", "isolation"
+        ]
+      },
+      {
+        "groupName": "Анимация и трансформации",
+        "properties": [
+          "transition", "transition-property", "transition-duration", "transition-timing-function", "transition-delay",
+          "animation", "animation-name", "animation-duration", "animation-timing-function", "animation-delay", "animation-iteration-count", "animation-direction", "animation-fill-mode", "animation-play-state",
+          "transform", "transform-origin", "transform-style",
+          "perspective", "perspective-origin",
+          "backface-visibility", "will-change"
+        ]
+      },
+      {
+        "groupName": "Разное",
+        "properties": [
+          "all", "appearance", "cursor", "pointer-events", "resize", "scroll-behavior", "scroll-snap-type", "scroll-snap-align", "scroll-snap-stop", "scroll-margin", "scroll-padding", "scrollbar-width", "scrollbar-color",
+          "user-select", "touch-action", "zoom", "fill", "stroke"
+        ]
       }
-    ],
-    "function-url-quotes": "always",
-    "selector-attribute-quotes": "always",
-    "selector-max-id": 10,
-    "scss/at-mixin-pattern": null,
-    "media-feature-name-no-unknown": null
+    ]
   }
 }

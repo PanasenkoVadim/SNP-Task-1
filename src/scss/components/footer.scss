@@ -4,11 +4,11 @@
   background-color: helpers.$beige200;
 
   &__inner {
-    padding: 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px 0;
     gap: 7px;
 
     @include helpers.breakpoint(md) {

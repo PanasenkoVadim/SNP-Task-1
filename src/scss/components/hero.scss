@@ -7,19 +7,19 @@
     linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%),
     url("../../static/images/hero_background.webp");
-  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 
   .container {
-    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     min-height: 488px;
-    gap: 40px;
     padding-top: 88px;
+    text-align: center;
+    gap: 40px;
 
     @include helpers.breakpoint(md) {
       min-height: 831px;
