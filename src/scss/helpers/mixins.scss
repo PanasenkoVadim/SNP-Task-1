@@ -28,7 +28,7 @@
 @mixin range-breakpoint($min-breakpoint, $max-breakpoint) {
   @if map.has-key($breakpoints, $min-breakpoint) and map.has-key($breakpoints, $max-breakpoint) {
     $min-value: map.get($breakpoints, $min-breakpoint); // stylelint-disable-line scss/dollar-variable-pattern
-    $max-value: map.get($breakpoints, $max-breakpoint);stylelint-disable-linescss/dollar-variable-pattern$max-value // stylelint-disable-line scss/dollar-variable-pattern
+    $max-value: map.get($breakpoints, $max-breakpoint); // stylelint-disable-line scss/dollar-variable-pattern 
 
     @if $min-value >= $max-value {
       // stylelint-disable-line scss/operator-no-unspaced
