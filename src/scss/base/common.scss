@@ -1,107 +1,105 @@
 @use "../helpers" as helpers;
 
-
 html {
-	scroll-behavior: smooth;
-	scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 142%;
+  letter-spacing: 0;
 
-	font-family: "Roboto", sans-serif;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 142%;
-	letter-spacing: 0;
+  color: helpers.$black;
+  background-color: helpers.$beige100;
 
-	color: helpers.$black;
-	background-color: helpers.$beige100;
-
-	@include helpers.breakpoint(md) {
-		font-size: 20px;
-	}
+  @include helpers.breakpoint(md) {
+    font-size: 20px;
+  }
 }
 
 .wrapper {
-	overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .container {
-	padding: 0 21px;
-	margin: 0 auto;
+  padding: 0 21px;
+  margin: 0 auto;
 
-	@include helpers.breakpoint(md) {
-		padding: 0 53px;
-	}
+  @include helpers.breakpoint(md) {
+    padding: 0 53px;
+  }
 
-	@include helpers.breakpoint(lg) {
-		max-width: 1170px;
-		padding: 0;
-	}
+  @include helpers.breakpoint(lg) {
+    padding: 0;
+    max-width: 1170px;
+  }
 }
 
 .heading {
-	margin-bottom: 50px;
-	text-align: center;
+  text-align: center;
+  margin-bottom: 50px;
 
-	@include helpers.breakpoint(md) {
-		margin-bottom: 100px;
-	}
+  @include helpers.breakpoint(md) {
+    margin-bottom: 100px;
+  }
 
-	.h2 {
-		max-width: 723px;
-		margin: 0 auto 20px;
+  .h2 {
+    max-width: 723px;
+    margin: 0 auto 20px;
 
-		@include helpers.breakpoint(md) {
-			margin-bottom: 30px;
-		}
-	}
+    @include helpers.breakpoint(md) {
+      margin-bottom: 30px;
+    }
+  }
 
-	p {
-		color: helpers.$gray300;
-		max-width: 418px;
-		margin: 0 auto;
-	}
+  p {
+    color: helpers.$gray300;
+    max-width: 418px;
+    margin: 0 auto;
+  }
 }
 
 .link,
 .link-social {
-	position: relative;
-	color: inherit;
-	background: linear-gradient(transparent calc(100% - 1px), currentColor 2px);
-	background-position: 100%;
-	background-size: 0 100%;
-	background-repeat: no-repeat;
-	transition: .3s;
-	transition-property: background-size, color;
-	cursor: pointer;
+  position: relative;
+  color: inherit;
+  background: linear-gradient(transparent calc(100% - 1px), currentColor 2px);
+  background-position: 100%;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+  transition-property: background-size, color;
+  cursor: pointer;
 
-	@media (hover: hover) {
-		&:hover {
-			background-position: 0;
-			background-size: 100% 100%;
-		}
+  @media (hover: hover) {
+    &:hover {
+      background-position: 0;
+      background-size: 100% 100%;
+    }
 
-		&:active {
-			background-position: 0;
-			background-size: 100% 100%;
-			color: helpers.$green400;
-		}
-	}
+    &:active {
+      background-position: 0;
+      background-size: 100% 100%;
+      color: helpers.$green400;
+    }
+  }
 }
 
 .link-social {
-	@media (hover: hover) {
-		&:active {
-			color: helpers.$orange200;
-		}
-	}
+  @media (hover: hover) {
+    &:active {
+      color: helpers.$orange200;
+    }
+  }
 }
 
 section {
-	margin-bottom: 75px;
+  margin-bottom: 75px;
 
-	@include helpers.breakpoint(md) {
-		margin-bottom: 135px;
-	}
+  @include helpers.breakpoint(md) {
+    margin-bottom: 135px;
+  }
 }

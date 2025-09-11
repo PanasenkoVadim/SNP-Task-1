@@ -1,85 +1,85 @@
 @use "../helpers" as helpers;
 
 .header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: 32px 0;
-	z-index: 10;
-	color: helpers.$white;
-	opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 0;
+  z-index: 10;
+  color: helpers.$white;
+  opacity: 1;
 
-	@include helpers.breakpoint(md) {
-		padding: 28px 0;
-	}
+  @include helpers.breakpoint(md) {
+    padding: 28px 0;
+  }
 
-	&.prefixed,
-	&.upfixed {
-		position: fixed;
-		background-color: rgba(243, 239, 232, 0.6);
-		backdrop-filter: blur(20px);
-		color: helpers.$black;
-		width: 100%;
+  &.prefixed,
+  &.upfixed {
+    position: fixed;
+    background-color: rgba(243, 239, 232, 0.6);
+    backdrop-filter: blur(20px);
+    color: helpers.$black;
+    width: 100%;
 
-		.header__logo img {
-			filter: brightness(0.1);
-		}
-	}
+    .header__logo img {
+      filter: brightness(0.1);
+    }
+  }
 
-	&.prefixed {
-		transform: translateY(-110%);
-	}
+  &.prefixed {
+    transform: translateY(-110%);
+  }
 
-	&.fixed {
-		transform: translateY(-110%);
-		transition: transform .5s ease;
-	}
+  &.fixed {
+    transform: translateY(-110%);
+    transition: transform 0.5s ease;
+  }
 
-	&.upfixed {
-		transform: translateY(0);
-		transition: transform .5s ease;
-	}
+  &.upfixed {
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+  }
 
-	.container {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-		@include helpers.breakpoint(md) {
-			padding: 0 57px;
-		}
+    @include helpers.breakpoint(md) {
+      padding: 0 57px;
+    }
 
-		@include helpers.breakpoint(lg) {
-			padding: 0;
-		}
-	}
+    @include helpers.breakpoint(lg) {
+      padding: 0;
+    }
+  }
 
-	&__logo {
-		width: 133px;
-		height: 22px;
-		cursor: pointer;
+  &__logo {
+    width: 133px;
+    height: 22px;
+    cursor: pointer;
 
-		@include helpers.breakpoint(md) {
-			width: 182px;
-			height: 30px;
-		}
-	}
+    @include helpers.breakpoint(md) {
+      width: 182px;
+      height: 30px;
+    }
+  }
 
-	&__nav {
-		display: none;
+  &__nav {
+    display: none;
 
-		@include helpers.breakpoint(md) {
-			display: block;
-		}
+    @include helpers.breakpoint(md) {
+      display: block;
+    }
 
-		&__list {
-			display: flex;
-			gap: 30px;
+    &__list {
+      display: flex;
+      gap: 30px;
 
-			@include helpers.breakpoint(lg) {
-				gap: 50px;
-			}
-		}
-	}
+      @include helpers.breakpoint(lg) {
+        gap: 50px;
+      }
+    }
+  }
 }
