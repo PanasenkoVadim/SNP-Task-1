@@ -1,4 +1,4 @@
-export function initDynamicHeader() {
+export const initDynamicHeader = () => {
   const header = document.querySelector(".js-header")
   const headerLogo = header.querySelector(".js-headerLogo")
   const SCROLL_THRESHOLD = 450

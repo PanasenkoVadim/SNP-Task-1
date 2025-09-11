@@ -2,7 +2,7 @@ import IMask from "imask"
 import { validation } from "./utils/validation"
 import { Calendar } from "vanilla-calendar-pro"
 
-export function initForm() {
+export const initForm = () => {
   const form = document.querySelector(".js-form")
 
   initMasks()

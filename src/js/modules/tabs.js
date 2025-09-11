@@ -1,6 +1,6 @@
 import { debounce } from "./utils/debounce"
 
-export function initTabs({ defaultIndex = 0, activeClass = "active", resizeDelay = 200 } = {}) {
+export const initTabs = ({ defaultIndex = 0, activeClass = "active", resizeDelay = 200 } = {}) => {
   const wrapper = document.querySelector(".js-tabs")
 
   if (!wrapper) return

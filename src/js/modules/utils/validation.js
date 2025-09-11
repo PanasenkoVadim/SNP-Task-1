@@ -54,7 +54,7 @@ const validationMethods = {
   }
 }
 
-export function validation(form, callback) {
+export const validation = (form, callback) => {
   if (!form) return
 
   form.addEventListener("submit", (e) => {
