@@ -263,12 +263,13 @@
 							<div class="form__field">
 								<label>Направление</label>
 								<div class="select">
-									<select class="js-select" name="tour" id="">
+									<select class="js-select" name="tour" id="" data-validation="required">
 										<option disabled selected hidden value="">Куда хотите ехать</option>
 										<option value="value1">Вариант 1</option>
 										<option value="value2">Вариант 2</option>
 										<option value="value3">Вариант 3</option>
 									</select>
+									<span class="form__error"></span>
 									<span class="select-arrow"></span>
 								</div>
 							</div>
@@ -282,7 +283,7 @@
 							<div class="form__field">
 								<label for="">Телефон</label>
 								<input name="phone" type="text" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
-									data-mask="+ {7} (000) 000-00-00" data-validation="phone">
+									data-mask="+ {7} (000) 000-00-00" data-validation="required phone">
 								<span class="form__error"></span>
 							</div>
 

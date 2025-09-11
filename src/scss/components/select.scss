@@ -35,14 +35,19 @@
       color: #333;
     }
 
+
+    &.invalid {
+      border-color: helpers.$red !important;
+    }
+
     &:focus {
       background-color: helpers.$beige200;
       border-color: helpers.$gray300;
       outline: none;
     }
 
-    &:focus + .select-arrow,
-    &:active + .select-arrow {
+    &:focus+.select-arrow,
+    &:active+.select-arrow {
       transform: translateY(-50%) rotate(225deg);
     }
   }

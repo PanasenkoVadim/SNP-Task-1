@@ -60,7 +60,7 @@ export function validation(form, callback) {
   form.addEventListener("submit", (e) => {
     e.preventDefault()
     const checkbox = form.querySelector(".js-checkbox")
-    const fields = Array.from(form.querySelectorAll("input, textarea")).filter((i) => i.dataset.validation)
+    const fields = Array.from(form.querySelectorAll("input, select, textarea")).filter((i) => i.dataset.validation)
     const radioGroups = form.querySelectorAll(".js-radioGroup[data-validation=required]")
 
     fields.forEach(validateField)
