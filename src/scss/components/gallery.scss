@@ -8,6 +8,7 @@
   @include helpers.breakpoint(md) {
     margin-bottom: 135px;
   }
+
   @include helpers.breakpoint(lg) {
     padding: 0 30px;
   }
@@ -20,10 +21,6 @@
     @include helpers.breakpoint(md) {
       gap: 30px;
     }
-
-    // @include helpers.breakpoint(lg) {
-    // 	gap: 30px;gap
-    // }
   }
 
   &__item {
