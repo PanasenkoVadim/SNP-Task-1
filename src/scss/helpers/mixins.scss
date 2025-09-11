@@ -27,8 +27,8 @@
 
 @mixin range-breakpoint($min-breakpoint, $max-breakpoint) {
   @if map.has-key($breakpoints, $min-breakpoint) and map.has-key($breakpoints, $max-breakpoint) {
-    $min-value: map.get($breakpoints, $min-breakpoint);
-    $max-value: map.get($breakpoints, $max-breakpoint);
+    $min-value: map.get($breakpoints, $min-breakpoint); // stylelint-disable-line scss/dollar-variable-pattern
+    $max-value: map.get($breakpoints, $max-breakpoint); // stylelint-disable-line scss/dollar-variable-pattern
 
     @if $min-value >= $max-value {
       @error "Минимальный брейкпоинт '#{$min-breakpoint}' (#{$min-value}) должен быть меньше максимального '#{$max-breakpoint}' (#{$max-value})";
